@@ -1,0 +1,37 @@
+import java.util.*;
+class Rectangle1
+{
+int length;
+int width;
+void input()
+{
+System.out.println("enter the length and width of the rectangle");
+Scanner sc = new Scanner(System.in);
+length = sc.nextInt();
+width = sc.nextInt();
+}
+double area()
+{
+return (length*width);
+}
+void output()
+{
+System.out.println("length="+length);
+System.out.println("width="+width);
+System.out.println("area="+area());
+}
+}
+class Rectangle
+{
+public static void main(String args[])
+{
+Rectangle1 r1 = new Rectangle1();
+Rectangle1 r2 = new Rectangle1();
+r1.input();
+r2.input();
+r1.output();
+r1.area();
+r2.output();
+r2.area();
+}
+}
