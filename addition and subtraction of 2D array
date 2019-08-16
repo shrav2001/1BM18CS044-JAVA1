@@ -1,0 +1,81 @@
+import java.util.*;
+class AddSub
+{
+public static void main(String args[])
+{
+System.out.println("enter the rows and columns of matrix a:");
+Scanner sc = new Scanner(System.in);
+int m1 = sc.nextInt();
+int n1 = sc.nextInt();
+System.out.println("enter the rows and columns of matrix b:");
+int m2 = sc.nextInt();
+int n2 = sc.nextInt();
+int a[][] = new int[m1][n1];
+int b[][] = new int[m2][n2];
+int s[][] = new int[10][10];
+int d[][] = new int[10][10];
+int i,j;
+System.out.println("enter array a elements");
+for(i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+a[i][j] = sc.nextInt();
+}
+}
+System.out.println("enter array b elements");
+for(i=0;i<m2;i++)
+{
+for(j=0;j<n2;j++)
+{
+b[i][j] = sc.nextInt();
+}
+}
+if(m1==m2 && n1==n2)
+{
+for(i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+s[i][j]=a[i][j]+b[i][j];
+}
+}
+}
+else
+{
+System.out.println("addition cannot be done");
+}
+if(m1==m2 && n1==n2)
+{
+for(i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+d[i][j]=a[i][j]-b[i][j];
+}
+}
+}
+else
+{
+System.out.println("sutraction cannot be done");
+}
+System.out.println("matrix sum=");
+for(i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+System.out.print(s[i][j]);
+}
+System.out.println("\n");
+}
+System.out.println("matrix difference=");
+for(i=0;i<m1;i++)
+{
+for(j=0;j<n1;j++)
+{
+System.out.print(d[i][j]);
+}
+System.out.println("\n");
+}
+}
+}
