@@ -1,0 +1,56 @@
+import java.util.Scanner;
+class time1
+{
+int hours,minutes,seconds;
+time1()
+{
+hours=0;
+minutes=0;
+seconds=0;
+}
+time1(int hrs,int min,int sec)
+{
+hours=hrs;
+minutes=min;
+seconds=sec;
+}
+void advanced(int a,int b,int c)
+{
+seconds=seconds+(c/60);
+minutes=minutes+(b/60);
+hours=hours+(a/60);
+}
+void currenttime(int hrs,int min,int sec)
+{
+hours=hrs;
+minutes=min;
+seconds=sec;
+}
+void print()
+{
+System.out.println("time="+hours+" "+minutes+" "+seconds);
+}
+}
+class time
+{
+public static void main(String args[])
+{
+System.out.println("enter hrs,min,sec");
+Scanner sc= new Scanner(System.in);
+int h = sc.nextInt();
+int m = sc.nextInt();
+int s = sc.nextInt();
+time1 t1 = new time1(h,m,s);
+System.out.println("enter time u want to advance");
+int ah = sc.nextInt();
+int am = sc.nextInt();
+int as = sc.nextInt();
+t1.advanced(ah,am,as);
+System.out.println("enter current time");
+int h1 = sc.nextInt();
+int m1 = sc.nextInt();
+int s1 = sc.nextInt();
+t1.currenttime(h1,m1,s1);
+t1.print();
+}
+}
