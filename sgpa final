@@ -1,31 +1,23 @@
-/* package codechef; // don't place package name! */
 
-/******************************************************************************
-
-                            Online Java Debugger.
-                Code, Run and Debug Java program online.
-Write your code in this editor and press "Debug" button to debug program.
-
-*******************************************************************************/
 
 import java.util.*;
 class student1{
     String name;
     String usn;
-    int c[] = nextInt[50];
-    int m[] = nextInt[50];
+    int c[] = new Int[50];
+    int m[] = new Int[50];
     double sgpa1;
     int n;
     int c1=0;
     int sum=0;
-    int grade[] = nextInt[50];
+    int grade[] = new Int[50];
 void input(){
     Scanner sc = new Scanner(System.in);
     System.out.println("enter number of subjects:");
     n = sc.nextInt();
     System.out.println("enter name,usn");
-    String name = sc.next();
-    String usn = sc.next();
+    String name = sc.nextLine();
+    String usn = sc.nextLine();
     int i;
     System.out.println("enter credits in each subject");
     for(i=0;i<n;i++)
@@ -41,14 +33,14 @@ void input(){
     }
     
 }
-void clac()
+void calc()
 {
    int i;
     
     
 for(i = 0; i<n; i++)
 {
-if(m[i]>=90)
+if(m[i]>=90 && m[i]<=100)
 {
 grade[i] = 10;
 }
@@ -107,7 +99,7 @@ class student
 {
     public static void main(String args[])
     {
-        Scanner sc = new Scanner(System.in);
+        
         student1 st = new student1();
         st.input();
         st.calc();
