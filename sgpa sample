@@ -1,14 +1,15 @@
+
 import java.util.*;
 class student1{
     String name;
     String usn;
-    array c[] = new Int[50];
-    array m[] = new Int[50];
+    int c[] = nextInt[50];
+    int m[] = nextInt[50];
     int sgpa;
     int n;
     int c1=0;
     int sum=0;
-    array grade[] = new Int[50];
+    int grade[] = nextInt[50];
 void input(){
     Scanner sc = new Scanner(String.in);
     System.out.println("enter number of subjects:");
@@ -94,7 +95,7 @@ void output()
     System.out.println("name=\n"+name+"usn=\n"+usn+"sgpa=\n"+sgpa);
 }
 }
-class student()
+class student
 {
     public static void main(String args[])
     {
