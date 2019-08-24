@@ -45,12 +45,12 @@ if(m[i]>=90 && m[i]<=100)
 grade[i] = 10;
 }
 else
-if(m[i]>=75 && m[i]<90)
+if(m[i]>=80 && m[i]<90)
 {
 grade[i] = 9;
 }
 else
-if(m[i]>=60 && m[i]<75)
+if(m[i]>=60 && m[i]<80)
 {
 grade[i] = 8;
 }
