@@ -2,31 +2,31 @@ import java.util.*;
 class student1{
     String name;
     String usn;
-    int c[50];
-    int m[50];
+    array c[] = new Int[50];
+    array m[] = new Int[50];
     int sgpa;
     int n;
     int c1=0;
     int sum=0;
-    int grade[50];
+    array grade[] = new Int[50];
 void input(){
     Scanner sc = new Scanner(String.in);
     System.out.println("enter number of subjects:");
     n = sc.nextInt();
-    System.out.println("enter name,usn")
+    System.out.println("enter name,usn");
     String name = sc.next();
     String usn = sc.next();
     int i;
     System.out.println("enter credits in each subject");
     for(i=0;i<n;i++)
     {
-        int c[i] = sc.nextInt();
+        int c[] = sc.nextInt[i];
         
     }
     System.out.println("enter marks of subjects:");
     for(i=0;i<n;i++)
     {
-        int m[i] = sc.nextInt();
+        int m[] = sc.nextInt[i];
         
     }
     
