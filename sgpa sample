@@ -100,7 +100,7 @@ class student()
     {
         Scanner sc = new Scanner(System.in);
         student1 st = new student1();
-        st.inpit();
+        st.input();
         st.calc();
         st.output();
     }
