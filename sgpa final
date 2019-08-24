@@ -1,0 +1,116 @@
+/* package codechef; // don't place package name! */
+
+/******************************************************************************
+
+                            Online Java Debugger.
+                Code, Run and Debug Java program online.
+Write your code in this editor and press "Debug" button to debug program.
+
+*******************************************************************************/
+
+import java.util.*;
+class student1{
+    String name;
+    String usn;
+    int c[] = nextInt[50];
+    int m[] = nextInt[50];
+    double sgpa1;
+    int n;
+    int c1=0;
+    int sum=0;
+    int grade[] = nextInt[50];
+void input(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter number of subjects:");
+    n = sc.nextInt();
+    System.out.println("enter name,usn");
+    String name = sc.next();
+    String usn = sc.next();
+    int i;
+    System.out.println("enter credits in each subject");
+    for(i=0;i<n;i++)
+    {
+         c[i] = sc.nextInt();
+        
+    }
+    System.out.println("enter marks of subjects:");
+    for(i=0;i<n;i++)
+    {
+         m[i] = sc.nextInt();
+        
+    }
+    
+}
+void clac()
+{
+   int i;
+    
+    
+for(i = 0; i<n; i++)
+{
+if(m[i]>=90)
+{
+grade[i] = 10;
+}
+else
+if(m[i]>=75 && m[i]<90)
+{
+grade[i] = 9;
+}
+else
+if(m[i]>=60 && m[i]<75)
+{
+grade[i] = 8;
+}
+else
+if(m[i]>=50 && m[i]<60)
+{
+grade[i] = 7;
+}
+else
+if(m[i]>=45 && m[i]<50)
+{
+grade[i] = 5;
+}
+else
+if(m[i]>= 40 && m[i]<45)
+{
+grade[i] = 4;
+}
+else
+if(m[i]>=0 && m[i]<45)
+{
+grade[i] = 0;
+}
+else
+{
+System.out.println("Invalid");
+
+}
+}
+for(i = 0; i<n; i++)
+{
+sum = sum + (grade[i]*c[i]);
+}
+for(i=0;i<n;i++)
+{
+c1=c1+c[i];
+}
+sgpa1 = sum/c1;
+}
+void output()
+{
+    System.out.println("name=\n"+name+"usn=\n"+usn+"sgpa=\n"+sgpa1);
+}
+}
+class student
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        student1 st = new student1();
+        st.input();
+        st.calc();
+        st.output();
+    }
+}
