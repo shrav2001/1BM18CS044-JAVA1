@@ -8,6 +8,7 @@ int pages;
 float price;
 book()
 {
+
 }
  book(String name,String author,int pages,float price)
  {
