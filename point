@@ -1,0 +1,36 @@
+class point1
+{
+private int x,y;
+point1()
+{
+x=0;
+y=0;
+}
+point1(int x, int y)
+{
+this.x=x;
+this.y=y;
+}
+point1(point1 ob)
+{
+x=ob.x;
+y=ob.y;
+}
+double distance(point1 p)
+{
+double d = Math.sqrt(Math.pow((x-(p.x)),2)+Math.pow((y-(p.y)),2));
+return d;
+}
+}
+class point{
+public static void main(String args[])
+{
+point1 p1 = new point1(1,2);
+point1 p2 = new point1(p1);
+point1 p3 = new point1(3,4);
+double distance1 = p1.distance(p3);
+double distance2 = p2.distance(p3);
+System.out.println("distance between p1 and p3 is:"+distance1);
+System.out.println("distance between p2 and p3 is:"+distance2);
+}
+}
