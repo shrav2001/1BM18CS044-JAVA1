@@ -1,0 +1,54 @@
+import java.util.*;
+class book
+{
+String name,author;
+int pages;
+float price;
+book()
+{
+}
+ book(String name,String author,int pages,float price)
+ {
+ this.name=name;
+ this.author=author;
+ this.pages=pages;
+ this.price=price;
+ }
+
+void input()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("enter name of the book:");
+name = sc.next();
+System.out.println("enter author name:");
+author = sc.next();
+System.out.println("enter the number of pages:");
+pages = sc.nextInt();
+System.out.println("enter the price of the book:");
+price = sc.nextFloat();
+}
+
+void display()
+{
+System.out.println("book name:"+name);
+System.out.println("author name:"+author);
+System.out.println("number of pages:"+pages);
+System.out.println("price of the book:"+price);
+}
+
+}
+class bookdemo{
+public static void main(String args[])
+{
+book ob[] = new book[100];
+System.out.println("enter the number of objects required:");
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+for(int i=0;i<n;i++)
+{
+ob[i]=new book();
+ob[i].input();
+ob[i].display();
+}
+}
+}
