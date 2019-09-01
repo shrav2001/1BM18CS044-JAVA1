@@ -1,0 +1,53 @@
+    
+import java.util.*;
+class Book
+{
+	String name,author;
+	double price;
+	int pages;
+	Book()
+	{
+		
+	}
+	void set()
+	{
+		Scanner sc=new Scanner(System.in);
+		name=sc.next();
+		author=sc.next();
+		price=sc.nextDouble();
+		pages=sc.nextInt();
+	}
+	public String toString()
+	{
+		String s="Name:"+name+" , Author:"+author+" , Price:"+price+" , No.of pages:"+pages;
+		return s;
+	}
+	void print()
+	{
+		System.out.println(toString());
+	}
+}
+class BookDemo
+{
+	public static void main(String args[])
+	{
+		Scanner sca=new Scanner(System.in);
+		System.out.println("Enter the no.of book objects");
+		int n=sca.nextInt();
+		Book arr[]=new Book[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=new Book();
+		}
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("Enter name,author,price,no.of pages of book"+(i+1));
+			a[i].set();
+		}
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("Details of book"+(i+1));
+			a[i].print();
+		}
+	}
+}
