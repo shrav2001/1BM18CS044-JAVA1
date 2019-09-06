@@ -1,0 +1,53 @@
+
+import java.util.*;
+class vehicle{
+String model;
+int year;
+String colour;
+public static int total;
+vehicle(){
+}
+vehicle(String model,int year,String colour)
+{
+this.model=model;
+this.year=year;
+this.colour=colour;
+}
+void output()
+{
+System.out.println("model:"+model+"\nyear:"+year+"\ncolour:"+colour);
+
+}
+void input(){
+Scanner sc = new Scanner(System.in);
+System.out.println("model:");
+model = sc.next();
+System.out.println("year:");
+year = sc.nextInt();
+System.out.println("colour:");
+colour = sc.next();
+total++;
+}
+}
+class demo{
+public static void main(String args[])
+{
+int i;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter the total number of vehicles:");
+int n = sc.nextInt();
+vehicle v[]=new vehicle[n];
+for(i=0;i<n;i++)
+{
+v[i] = new vehicle();
+}
+for(i=0;i<n;i++)
+{
+v[i].input();
+v[i].output();
+}
+System.out.println("total number of vehicles:"+vehicle.total);
+}
+}
+
+
