@@ -1,0 +1,49 @@
+import java.util.*;
+class account{
+String name;
+int num;
+int balance;
+void input()
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("enter name:");
+name = sc.next();
+System.out.println("enter customer number:");
+num = sc.nextInt();
+System.out.println("enter the balance amount:");
+balance = sc.nextInt();
+}
+void output()
+{
+System.out.println("name:"+name+"\ncuatomer number:"+num+"\nbalance amount:"+balance);
+}
+}
+class savings extends account{
+int rate;
+int time;
+int compute()
+{
+return balance*rate*time;
+}
+void input1(){
+input();
+Scanner sc=new Scanner(System.in);
+System.out.println("enter rate of intrest:");
+rate = sc.nextInt();
+System.out.println("enter timespan:");
+time = sc.nextInt();
+}
+void output1(){
+output();
+System.out.println("rate:"+rate+"\ntimespan:"+time);
+}
+}
+class demo{
+public static void main(String args[]){
+savings ob = new savings();
+ob.input1();
+System.out.println("intrest:"+ob.compute());
+ob.output1();
+}
+}
+
