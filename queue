@@ -1,0 +1,74 @@
+import java.util.*;
+class queue{
+int f,r,item;
+int a[]= new int[50];
+queue()
+{
+f=0;
+r=-1;
+}
+void insert(int i){
+Scanner sc = new Scanner(System.in);
+if(r==49)
+{
+System.out.println("queue overflow");
+return;
+}
+r=r+1;
+a[r]=i;
+}
+int delete()
+{
+Scanner sc = new Scanner(System.in);
+if(f>r)
+{
+System.out.println("queue underflow");
+return -999;
+}
+item=a[f];
+f=f+1;
+return item;
+}
+void display()
+{
+Scanner sc = new Scanner(System.in);
+int i;
+if(f>r)
+{
+System.out.println("queue is empty");
+return;
+}
+System.out.println("contents of queue are:");
+for(i=0;i<50;i++)
+{
+System.out.println(a[i]);
+}
+}
+}
+class demo{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+int i=0,e,ele;
+System.out.println("press\n1-insert\n2-delete\n3-display\n4-exit:");
+System.out.println("enter your choice:");
+int ch = sc.nextInt();
+queue ob = new queue();
+while(ch!=0)
+{
+switch(ch)
+{
+case 1:System.out.println("enter the element you wanna insert:");
+ele = sc.nextInt();
+ob.insert(ele);
+break;
+case 2:
+e=ob.delete();
+break;
+case 3:ob.display();
+break;
+case 4:break;
+}
+}
+}
+}
