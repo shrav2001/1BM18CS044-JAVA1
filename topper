@@ -1,0 +1,81 @@
+import java.util.*;
+class person{
+String name;
+int age;
+String add;
+int avg;
+person()
+{
+
+}
+person(String name,int age,String add,int avg)
+{
+this.name=name;
+this.age=age;
+this.add=add;
+this.avg=avg;
+}
+}
+class student extends person{
+int roll;
+int sem;
+}
+class exam extends student{
+int marks1;
+int marks2;
+void input()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("enter name:");
+name = sc.next();
+System.out.println("enter age:");
+age = sc.nextInt();
+System.out.println("enter address:");
+add = sc.next();
+System.out.println("enter roll number:");
+roll = sc.nextInt();
+System.out.println("enter semester:");
+sem = sc.nextInt();
+System.out.println("enter the marks in sub 1:");
+marks1 = sc.nextInt();
+System.out.println("enter the marks in sub 2:");
+marks2 = sc.nextInt();
+}
+int compute()
+{
+avg = (marks1+marks2)/2;
+return avg;
+}
+void display()
+{
+System.out.println("rollnumber:"+roll+"\nsemester:"+sem+"\nname:"+name);
+System.out.println("\nage:"+age+"\naddress:"+add);
+System.out.println("average is :"+avg);
+}
+}
+class demo{
+public static void main(String args[])
+{
+int a,b;
+Scanner sc = new Scanner(System.in);
+exam s1 = new exam();
+exam s2 = new exam();
+s1.input();
+a=s1.compute();
+s1.display();
+s2.input();
+b=s2.compute();
+s2.display();
+if(a>b)
+{
+System.out.println("topper is: "+s1.name);
+}
+else
+{
+System.out.println("topper is: "+s2.name);
+}
+
+}
+}
+
+
