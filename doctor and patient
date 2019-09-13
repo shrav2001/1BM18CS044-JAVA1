@@ -1,0 +1,64 @@
+import java.util.*;
+class patient{
+int patient_id;
+String patient_name;
+int age;
+String doctor_name;
+void input()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("enter patient id:");
+patient_id = nextInt();
+System.out.println("enter patient name:");
+patient_name = next();
+System.out.println("enter patient age:");
+age = nextInt();
+System.out.println("enter doctor name:");
+doctor_name = next();
+}
+void display()
+{
+System.out.println("patient id :"+patient_id);
+System.out.println("patient name :"+patient_name);
+System.out.println("patient age :"+age);
+System.out.println("doctor name :"+doctor_name);
+}
+}
+class demo{
+public static void main(String args[])
+{
+int n,i,id;
+String name;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter the number of patients:");
+n = sc.nextInt();
+patient p[] = new patient[n];
+for(i=0;i<n;i++)
+{
+p[i] = new patient();
+}
+for(i=0;i<n;i++)
+{
+p[i].input();
+}
+System.out.println("enter patient id:");
+id = nextInt();
+for(i=0;i<n;i++)
+{
+if(id==p[i].patient_id)
+{
+p[i].display();
+}
+}
+System.out.println("enter doctors name");
+name = sc.next();
+for(i=0;i<n;i++)
+{
+if(name==p[i].doctor_name)
+{
+System.out.println(p[i].patient_name);
+}
+}
+}
+}
+
