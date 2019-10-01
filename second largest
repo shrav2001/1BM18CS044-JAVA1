@@ -1,0 +1,31 @@
+import java.util.*;
+class Largest
+{
+	public static void main(String args[])
+{
+	Scanner sc=new Scanner(System.in);
+	int size,n,i;
+  int large=arr[0];
+  int second_large=arr[0];
+	System.out.println("Enter size of array");
+	size=sc.nextInt();
+	int arr[]=new int[size];
+	System.out.println("Enter elements of array");
+	for(i=0;i<size;i++)
+	{
+		arr[i]=se.nextInt();
+	}
+	for(i=1;i<size;i++)
+	{
+		if(arr[i]>large)
+			{
+      large=arr[i];
+      }
+    if((arr[i]>second_large)&&(arr[i]!=large))
+    {
+			second_large=arr[i]; 
+     } 
+	}
+	System.out.println("Second largest element is :  " + second_large);
+}
+}
