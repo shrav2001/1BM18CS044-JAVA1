@@ -1,0 +1,96 @@
+import java.util.*;
+class account
+{
+final int min_balance = 5000;
+String name;
+int no,type;
+int balance;
+void getdata()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("enter name of the customer:");
+name = sc.next();
+System.out.println("enter customer number:");
+no = sc.nextInt();
+System.out.println("enter the type of bank account:");
+type = sc.nextInt();
+}
+void display()
+{
+System.out.println("balance : "+balance);
+}
+void deposit()
+{
+int dep;
+Scanner sc = new Scanner(System.in);
+System.out.println("enetr the amount to be deposites:");
+dep = sc.nextInt();
+balance = balance+dep;
+}
+void withdraw()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("enetr the amount to be withdrawn:");
+int with = sc.nextInt();
+balance=balance-with;
+}
+}
+class savings extends account
+{
+int ci;
+void compute()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("input the values of rate and time:");
+int r = sc.nextInt();
+int t = sc.nextInt();
+ci = balance*(Math.pow((1+(r/100)),t));
+}
+void display()
+{
+compute();
+System.out.println("the compound intrest is:"+ci);
+balance = balance+ci;
+super.display();
+}
+
+}
+class current extends account
+{
+void penalty()
+{
+if(balance<min_balance)
+{
+final int penalty = 20;
+balance = balance-penalty;
+display();
+}
+else
+display();
+}
+}
+class demo{
+public static void main(String args[])
+{
+Scanner sc = new Scanner(System.in);
+account ref;
+System.out.println("press\n1:savings account\n2:current account");
+int ch = sc.nextInt();
+if(ch==1)
+{
+ref=new savings();
+}
+else
+{
+ref=new current();
+}
+ref.getdata();
+System.out.println("press\n1:deposit\n2:withdraw");
+int c = sc.nextInt();
+if(c==1)
+ref.deposit();
+else
+ref.withdraw();
+ref.display();
+}
+}
