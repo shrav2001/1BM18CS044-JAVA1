@@ -1,0 +1,164 @@
+import java.util.*;
+class student
+{
+String name,usn;
+int sem;
+void getdata()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter usn:");
+usn = sc.next();
+System.out.println("Enter student name:");
+name = sc.next();
+System.out.println("Enter semester:");
+sem = sc.nextInt();
+}
+void display()
+{
+System.out.println("USN:"+usn+"\nname:"+name+"\nsemester:"+sem);
+}
+}
+class test extends student
+{
+int i;
+int cm[]= new int[6];
+int c[]=new int[6];
+void getdata()
+{
+super.getdata();
+Scanner sc = new Scanner(System.in);
+for(i=0;i<6;i++)
+{
+System.out.println("marks cm is subject "+(i+1)+" is:");
+cm[i] = sc.nextInt();
+System.out.println("credits of subject "+(i+1)+" is:");
+c[i]= sc.nextInt();
+}
+}
+void display()
+{
+super.display();
+for(i=0;i<6;i++)
+{
+System.out.println("marks is subject "+(i+1)+"is:"+cm[i]);
+System.out.println("credits of subject "+(i+1)+"is:"+c[i]);
+}
+}
+}
+class exam extends test
+{
+int i;
+int m[]=new int[6];
+void getdata()
+{
+super.getdata();
+Scanner sc = new Scanner(System.in);
+for(i=0;i<6;i++)
+{
+System.out.println("SEE marks m is subject "+(i+1)+"is:");
+m[i] = sc.nextInt();
+}
+}
+}
+class result extends exam
+{
+int grade[]=new int[6];
+char g[] = new char[6];
+float sgpa;
+int i;
+int sum=0;
+int tc=0;
+void getdata()
+{
+super.getdata();
+for(i=0;i<6;i++)
+{
+if(m[i]>=90 && m[i]<=100)
+{
+g[i]='S';
+grade[i] = 10;
+}
+else
+if(m[i]>=80 && m[i]<90)
+{
+g[i]='A';
+grade[i] = 9;
+}
+else
+if(m[i]>=60 && m[i]<80)
+{
+g[i]='B';
+grade[i] = 8;
+}
+else
+if(m[i]>=50 && m[i]<60)
+{
+g[i]='C';
+grade[i] = 7;
+}
+else
+if(m[i]>=45 && m[i]<50)
+{
+g[i]='D';
+grade[i] = 5;
+}
+else
+if(m[i]>= 40 && m[i]<45)
+{
+g[i]='E';
+grade[i] = 4;
+}
+else
+if(m[i]<40)
+{
+g[i]='F';
+grade[i] = 0;
+}
+else
+{
+System.out.println("Invalid");
+}
+}
+for(i = 0; i<6; i++)
+{
+sum = sum + (grade[i]*c[i]);
+}
+for(i=0;i<6;i++)
+{
+tc=tc+c[i];
+}
+sgpa = (float)sum/tc;
+}
+void display()
+{
+super.display();
+for(i=0;i<6;i++)
+{
+System.out.println("the grade in subject "+(i+1)+" is:"+g[i]); 
+}
+System.out.println("the sgpa is "+sgpa);
+}
+}
+class demo
+{
+public static void main(String args[])
+{
+int i,n;
+Scanner sc = new Scanner (System.in);
+System.out.println("enter number of students:");
+n = sc.nextInt();
+result r[]=new result[n];
+for(i=0;i<n;i++)
+{
+r[i]=new result();
+}
+for(i=0;i<n;i++)
+{
+r[i].getdata();
+r[i].display();
+}
+}
+}
+
+
+
