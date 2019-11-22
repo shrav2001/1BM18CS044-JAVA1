@@ -1,0 +1,57 @@
+import java.util.*;
+class bmsce implements Runnable
+{
+Thread t;
+bmsce()
+{
+t=new Thread(this,"t1");
+t.start();
+}
+public void run()
+{
+while(true)
+{
+System.out.println("BMS COLLEGE OF ENGINEERING\n");
+try
+{
+Thread.sleep(10000);
+}
+catch(InterruptedException e)
+{
+System.out.println("interrupted exception for thread bmsce\n");
+}
+}
+}
+}
+class cse implements Runnable
+{
+Thread t;
+cse()
+{
+t=new Thread(this,"t2");
+t.start();
+}
+public void run()
+{
+while(true)
+{
+System.out.println("CSE\n");
+try
+{
+Thread.sleep(2000);
+}
+catch(InterruptedException e)
+{
+System.out.println("interrupted exception for thread cse\n");
+}
+}
+}
+}
+class demo
+{
+public static void main(String args[])
+{
+bmsce ob1 = new bmsce();
+cse ob2 = new cse();
+}
+}
