@@ -1,0 +1,85 @@
+import java.util.*;
+class q
+{
+int n;
+boolean f=false;
+synchronized int get()
+{
+while(!f)
+{
+try
+{
+this.wait();
+}
+catch(InterruptedException e)
+{
+System.out.println("consumer interrupted");
+}
+System.out.println("got : "+n);
+f=false;
+notify();
+}
+return n;
+}
+synchronized void put(int n)
+{
+this.n=n;
+while(f)
+{
+try
+{
+wait();
+}
+catch(InterruptedException e)
+{
+System.out.println("consumer interrupted");
+}
+System.out.println("put : "+n);
+f=true;
+notify();
+}
+}
+}
+class prod implements Runnable
+{
+q a;
+prod(q a)
+{
+this.a=a;
+new Thread(this,"producer").start();
+}
+public void run()
+{
+int i=0;
+while(true)
+{
+a.put(i++);
+}
+}
+}
+class cons implements Runnable
+{
+q a;
+cons(q a)
+{
+this.a=a;
+new Thread(this,"consumer").start();
+}
+public void run()
+{
+int i;
+while(true)
+{
+a.get();
+}
+}
+}
+class pc
+{
+public static void main(String args[])
+{
+q ob= new q();
+new prod(ob);
+new cons(ob);
+}
+}
